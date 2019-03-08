@@ -1,0 +1,17 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+    <h5>Account Info</h5>
+    <br>
+    <ul class="list-group">
+        <li class="list-group-item"><strong>Username:</strong> {{ account }}</li>
+        <li class="list-group-item"><strong>Username:</strong> {{ account.first_name }}</li>
+        <li class="list-group-item"><strong>Username:</strong> {{ account.last_name }}</li>
+        <li class="list-group-item"><strong>Email:</strong> {{ account.email }}</li>
+    </ul>
+    <br>
+    <a class="btn btn-dark" href="edit-account" role="button">Edit Info</a>
+    <a class="btn btn-dark" href="change-password" role="button">Change Password</a>
+
+
+{% endblock %}

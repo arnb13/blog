@@ -1,0 +1,18 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+<div class="row">
+    {% for i in Blogs %}
+        <div class="col-6 col-sm-3">
+            <div class="card text-white bg-dark mb-3" style="max-width: 27rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ i.title }}</h5>
+                    <p class="card-text"><small class="text-muted">{{ i.published }}</small></p>
+                    <p class="card-text">{{ i.content | safe }}</p>
+                    <a href="#" class="btn btn-primary">Read mode...</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

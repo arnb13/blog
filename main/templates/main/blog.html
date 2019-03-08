@@ -1,0 +1,27 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+<div class="container">
+        <h5>{{ blog.title }}</h5>
+        <p><small class="text-muted">{{ blog.publisher }}</small></p>
+        <p><small class="text-muted">{{ blog.published }}</small></p>
+        <p>{{ blog.content | safe }}</p>
+</div>    
+<div class="row">
+    <div class="col-3 col-sm-2">
+        {% for s in sidebar %}
+            <div class="list-group">
+                {% if forloop.counter0 == this_blog_index %}
+                    <a href="{{ s.slug }}" class="list-group-item list-group-item-action active">{{ s.title }}</a>
+                {% else %}
+                    <a href="{{ s.slug }}" class="list-group-item list-group-item-action">{{ s.title }}</a>  
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="row">
+    
+</div>
+{% endblock %}
