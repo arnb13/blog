@@ -24,8 +24,7 @@ urlpatterns = [
     path('logout/', views.logout_request, name='logout'),
     path('login/', views.login_request, name='login'),
     path('account/', views.account, name='account'),
-    path('edit-account/', views.account, name='account'),
-    path('change-password/', views.account, name='account'),
+    path('edit-account/', views.edit_account, name='edit_account'),
+    path('change-password/', views.change_password, name='change_password'),
     path('<single_slug>', views.single_slug, name='single_slug'),
-    
 ]

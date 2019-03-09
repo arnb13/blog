@@ -35,18 +35,7 @@ def single_slug(request, single_slug):
             context={'blog': this_blog, 'sidebar': blogs_from_series, 'this_blog_index': this_blog_index}
         )
     
-    if single_slug == 'account':
-        return account(request)
-    if single_slug == 'logout':
-        return logout_request(request)
-    if single_slug == 'login':
-        return login_request(request)
-    if single_slug == 'register':
-        return register(request)
-    if single_slug == 'edit-account':
-        return edit_account(request)
-    if single_slug == 'change-password':
-        return change_password(request)
+
 
     return HttpResponse(f'{single_slug} does not exist')
 
@@ -126,9 +115,9 @@ def edit_account(request):
             
         else:
             messages.error(request, f'Account was not updated!')
-        return redirect('/account')
+        return redirect('/account/')
 
-    form = EditProfileForm
+    form = EditProfileForm(instance=request.user)
     return render(
         request=request,
         template_name='main/edit-account.html',
@@ -144,7 +133,7 @@ def change_password(request):
             
         else:
             messages.error(request, f'Password was not changed!')
-        return redirect('/login')
+        return redirect('/login/')
 
     form = PasswordChangeForm(user=request.user)
     return render(

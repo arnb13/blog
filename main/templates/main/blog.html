@@ -12,9 +12,9 @@
         {% for s in sidebar %}
             <div class="list-group">
                 {% if forloop.counter0 == this_blog_index %}
-                    <a href="{{ s.slug }}" class="list-group-item list-group-item-action active">{{ s.title }}</a>
+                    <a href="{{ s.slug }}/" class="list-group-item list-group-item-action active">{{ s.title }}</a>
                 {% else %}
-                    <a href="{{ s.slug }}" class="list-group-item list-group-item-action">{{ s.title }}</a>  
+                    <a href="{{ s.slug }}/" class="list-group-item list-group-item-action">{{ s.title }}</a>  
                 {% endif %}
             </div>
         {% endfor %}
