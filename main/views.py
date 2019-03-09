@@ -121,7 +121,7 @@ def edit_account(request):
     return render(
         request=request,
         template_name='main/edit-account.html',
-        context={'form': form, 'user': request.user}
+        context={'form': form}
     )
 
 def change_password(request):
